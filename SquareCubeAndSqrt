@@ -1,0 +1,59 @@
+/*
+ * @author Manpreet Singh
+ */
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Power {
+	public static boolean abc(double n) {
+		if (n==0.5) {
+			boolean answer = true;
+			return answer;
+		}
+		if (n==2) {
+			boolean answer = true;
+			return answer;
+		}
+		if (n==3) {
+			boolean answer = true;
+			return answer;
+		}
+		else {
+			boolean answer = false;
+			return answer;
+		}
+		
+
+}
+	public static String exponentiation(double n, double mv, double et) {
+		if (abc(n)==true) {
+		double ef = et / mv;
+		double p = Math.pow(mv, n);
+		double powET = Math.abs(p * ef);
+		DecimalFormat q = new DecimalFormat("####.##");
+		String ro = q.format(powET);
+		String ro1 = q.format(p);
+		String result = ro1 +" \u00B1 " + ro;
+		return result;
+		}
+		else return "Only 0.5, 2 and 3 is Recognized";
+	}
+
+public static void main(String[] args) {		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Enter the Value");
+		double v1 = keyboard.nextDouble();
+		
+		System.out.println("Enter the Error Term");
+		double et1 = keyboard.nextDouble();
+			
+		System.out.println("Enter 0.5 for Squareroot, 2 for Square and 3 for Cube");
+
+		double n = keyboard.nextDouble();
+		String result =exponentiation(n, v1, et1);	
+				System.out.println(result);
+			
+		keyboard.close();
+	}
+}
